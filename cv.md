@@ -8,6 +8,7 @@ Now I work as a project manager, and web development is a hobby for me.
 In general, I want to learn js in order to use cooler things in my projects, or maybe even to implement some useful online service that everyone could use, and I proudly add it to my resume line.
 ## Skills
 * python
+* web server
 * html
 * css
 * js
@@ -53,16 +54,16 @@ df.to_csv('price_complited.csv', sep=';')
 
 ## Experience
 My latest projects:
-* [mahc.by](mahc.by)
-* [hashtag.by](hashtag.by)
-* [itconsult.by](itconsult.by)
+* [mahc.by](https://mahc.by)
+* [hashtag.by](https://hashtag.by)
+* [itconsult.by](https://itconsult.by)
 
 ## Education
 
 ### Stepik
-[Python basic](https://stepik.org/cert/34680)
-[Python development](https://stepik.org/cert/30197)
-[Web-technologies](https://stepik.org/cert/40195)
+[Python basic](https://stepik.org/cert/34680)  
+[Python development](https://stepik.org/cert/30197)  
+[Web-technologies](https://stepik.org/cert/40195)  
 
 ### Codeacedemy
 [My profile](https://www.codecademy.com/profiles/IL1ne)
@@ -71,5 +72,5 @@ My latest projects:
 [My profile](https://www.codewars.com/users/IL1ne)
 
 ## English
-My English Level A2
+My English Level A2  
 I read technical documentation, stackoverflow posts and I understand speech quite well, but can't speak without same practice.
