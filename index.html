@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>HTML, CSS & Git Basics</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Kirill Mikhailov</h1>
+        <figure><img src="photo.jpeg" alt="my photo"></figure>
+        <h2>Contacts</h2>
+        <p>email: <a href="mailto:mikhailau.kiryl@gmail.com">mikhailau.kiryl@gmail.com</a></p>
+        <p>phone: <a href="tel:+375445752501">+375 (44) 575-25-01</a></p>
+      </header>
+      <main>
+        <section id="summary">
+          <h2>Summary</h2>
+          <p>I like to learn something new and keep my technical level up to par with developers.</p>
+          <p>Now I work as a project manager, and web development is a hobby for me.</p>
+          <p>In general, I want to learn js in order to use cooler things in my projects, or maybe even to implement some useful online service that everyone could use, and I proudly add it to my resume line.</p>
+        </section>
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li>python</li>
+            <li>web server</li>
+            <li>html</li>
+            <li>css</li>
+            <li>js</li>
+            <li>project managment</li>
+          </ul>
+        </section>
+        <section id="code_example">
+          <h2>Code example</h2>
+          <pre>
+            #python
+            import pandas as pd
+            import xml.etree.ElementTree as ET
+
+            # файл с прайсом
+            filename = 'pricelist.csv'
+            # файл для замены артикулов Brand1
+            tree = ET.parse('replace_rules.xml')
+            root = tree.getroot()
+            # словарь по которому будет определяться соответсвие между артикулами
+            replacement_dict = {}
+            # парсим данные из файла во фрейм
+            df = pd.read_csv(filename, sep=';', quotechar='\"')
+            # приводим поле актикул к тексту, чтобы не потерять нули впереди и избежать конвертации числа из-за символа "E"
+            df.ARTIKUL.astype('str')
+            # проходим по всем вариантам замены из файла и формируем словарь, по которому будет подстановка
+            for replacement in root.iter('Replacement'):
+                finding_var = replacement.attrib['Find']
+                replacement_dict[finding_var] = replacement.attrib['ReplaceWith']
+            # фильтруем список всех позиций по полю Бренд и значению Brand1
+            bosch_filtered = df[df.BRAND == 'Brand1']
+            # выполняем замену значений поля Артикул в соответствии со словарем подстановки
+            second_slice = bosch_filtered.ARTIKUL.replace(replacement_dict)
+            # обрабатываем оставшиеся не соотнесенные по словарю пункты согласно правилу (1 символ . 3 символа . 3 символа . 3 символа )
+            third = bosch_filtered.ARTIKUL.replace(r'^(.{1})(.{3})(.{3})(.{3})$', r'\1.\2.\3.\4', regex=True)
+            # Обновляем список по значения среза с замененными значениями
+            df.update(third)
+            # удаляем пустые значения после объединения
+            df.dropna(subset=['ARTIKUL'], inplace=True)
+            # эта строчка формирует выгрузку в кодировке для импорта на сайт
+            df.to_csv('price_complited.csv', sep=';')
+          </pre>
+        </section>
+        <section id="experience">
+          <h2>Experience</h2>
+          <p>My latest projects:</p>
+          <ul>
+            <li>
+              <a href="https://mahc.by">mahc.by</a>
+            </li>
+            <li>
+              <a href="https://hashtag.by">hashtag.by</a>
+            </li>
+            <li>
+              <a href="https://itconsult.by">itconsult.by</a>
+            </li>
+          </ul>
+        </section>
+        <section id="education">
+          <h2>Education</h2>
+          <h3>Stepik</h3>
+          <p><a href="https://stepik.org/cert/34680">Python basic</a></p>
+          <p><a href="https://stepik.org/cert/30197">Python development</a></p>
+          <p><a href="https://stepik.org/cert/40195">Web-technologies</a></p>
+          <h3>Codeacedemy</h3>
+          <p><a href="https://www.codecademy.com/profiles/IL1ne">My profile</a></p>
+          <h3>Codewars</h3>
+          <p><a href="https://www.codewars.com/users/IL1ne">My profile</a></p>
+        </section>
+        <section id="english">
+          <h2>English</h2>
+          <p>My English Level is A2</p>
+          <p>I read technical documentation, stackoverflow posts and I understand speech quite well, but can't speak without same practice.</p>
+        </section>
+      </main>
+      <footer>
+        <p>from Minsk with ❤ by <a href="https://github.com/IL1ne">IL1ne</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
