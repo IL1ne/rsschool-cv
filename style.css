@@ -1,0 +1,25 @@
+body {
+    background-color:#fff;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h2 {
+    background: #faea68;
+    text-transform: uppercase;
+}
+
+ul li {
+    margin-top: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    background-color: blue;
+    padding: 4px;
+}
